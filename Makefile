@@ -9,10 +9,10 @@ ancient:
 clean:
 	lein clean
 
-open:
+open-cards:
 	open http://localhost:$(PORT)/cards.html
 
-open-prod:
+open:
 	open resources/public/index.html
 
 prod:
@@ -24,5 +24,5 @@ repl:
 # Run 'lein figwheel' and then open localhost:3449/cards.html in your browser.
 
 o: open
-op: open-prod
+oc: open-cards
 r: repl

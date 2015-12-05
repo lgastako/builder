@@ -15,7 +15,7 @@
 
 (defn main []
   (when-let [node (sel1 :#app)]
-    (om/root main/view app/state node)))
+    (om/root main/view app/state {:target node})))
 
 (main)
 
