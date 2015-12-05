@@ -19,6 +19,12 @@ See: http://www.artofmanliness.com/2011/02/08/create-a-life-plan/
 
 Also see the Makefile for common commands.
 
+## Using figwheel from Emacs (with CIDER)
+
+1. cider-jack-in
+2. (use 'figwheel-sidecar.repl-api)
+3. (start-figwheel!)
+
 ## License
 
 Copyright © 2015 John Evans

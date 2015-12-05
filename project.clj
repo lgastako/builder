@@ -30,6 +30,7 @@
   :min-lein-version "2.5.3"
   :source-paths ["src"]
   :figwheel {:css-dirs ["resources/public/css"]}
+  :profiles {:dev {:dependencies [[com.cemerick/pomegranate  "0.3.0"]]}}
   :cljsbuild {:builds [{:id "devcards"
                         :source-paths ["src"]
                         :figwheel {:devcards true}
