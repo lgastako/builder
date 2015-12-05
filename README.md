@@ -24,6 +24,7 @@ Also see the Makefile for common commands.
 1. cider-jack-in
 2. (use 'figwheel-sidecar.repl-api)
 3. (start-figwheel!)
+4. (cljs-repl)
 
 ## License
 
