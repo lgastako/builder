@@ -30,7 +30,10 @@
   :min-lein-version "2.5.3"
   :source-paths ["src"]
   :figwheel {:css-dirs ["resources/public/css"]}
-  :profiles {:dev {:dependencies [[com.cemerick/pomegranate  "0.3.0"]]}}
+  :profiles {:dev {:dependencies [[com.cemerick/pomegranate  "0.3.0"]
+                                  [com.cemerick/piggieback "0.2.1"]
+                                  [org.clojure/tools.nrepl "0.2.12"]]}}
+  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
   :cljsbuild {:builds [{:id "devcards"
                         :source-paths ["src"]
                         :figwheel {:devcards true}
