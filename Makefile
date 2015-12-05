@@ -9,20 +9,24 @@ ancient:
 clean:
 	lein clean
 
-open-cards:
-	open http://localhost:$(PORT)/cards.html
-
 open:
 	open resources/public/index.html
+
+open-cards:
+	open http://localhost:$(PORT)/cards.html
 
 prod:
 	lein cljsbuild once prod
 
+prod-auto:
+	lein cljsbuild auto prod
+
 repl:
 	lein figwheel
 
-# Run 'lein figwheel' and then open localhost:3449/cards.html in your browser.
-
+a: ancient
 o: open
 oc: open-cards
+p: prod
+pa: prod-auto
 r: repl
