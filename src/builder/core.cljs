@@ -1,24 +1,22 @@
 (ns builder.core
-  (:require
-   #_[om.core :as om :include-macros true]
-   [sablono.core :as sab :include-macros true])
-  (:require-macros
-   [devcards.core :as dc :refer [defcard deftest]]))
+  (:require [builder.app :as app]
+            [builder.views.main :as main]
+            [devcards.core :refer-macros [defcard deftest]]
+            [dommy.core :refer-macros [sel1]]
+            [its.log :as log]
+            [om.core :as om :include-macros true]
+            [sablono.core :refer-macros [html]]))
 
-(enable-console-print!)
+(log/set-level! :debug)
+(log/debug ::begin)
 
 (defcard first-card
-  (sab/html [:div
-             [:h1 "This is your first devcard!"]]))
+  (html [:div [:h1 "This is your first devcard!"]]))
 
 (defn main []
-  ;; conditionally start the app based on wether the #main-app-area
-  ;; node is on the page
-  (if-let [node (.getElementById js/document "main-app-area")]
-    (js/React.render (sab/html [:div "This is working"]) node)))
+  (when-let [node (sel1 :#app)]
+    (om/root main/view app/state node)))
 
 (main)
 
-;; remember to run lein figwheel and then browse to
-;; http://localhost:3449/cards.html
-
+(log/debug ::end)
